@@ -43,7 +43,7 @@ const uploadVod = async function (file: Express.Multer.File) {
 
   const fileBuffer = readFileSync(fileUrl)
 
-  const { status } = await axios.put(videoUploadUrl!, fileBuffer, { headers: { 'Content-Type': file.mimetype, } })
+  const { status } = await axios.put(videoUploadUrl!, fileBuffer, { headers: { 'Content-Type': file.mimetype } })
 
   if (status !== 200)
     throw new Error('上传视频失败')
