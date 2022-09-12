@@ -8,7 +8,7 @@ import {
   VodClient,
 } from '@huaweicloud/huaweicloud-sdk-vod'
 import { BasicCredentials, Region, } from '@huaweicloud/huaweicloud-sdk-core'
-import { AK, CUSTOM_AXIOS, ENDPOINT, PROJECT_ID, REGION, SK, UPLOAD_DIR } from './shared'
+import { AK, ENDPOINT, PROJECT_ID, REGION, SK, UPLOAD_DIR, axios } from './shared'
 
 const getVodClient = function () {
   const auth = new BasicCredentials()
@@ -43,7 +43,7 @@ const uploadVod = async function (file: Express.Multer.File) {
 
   const fileBuffer = readFileSync(fileUrl)
 
-  const { status } = await CUSTOM_AXIOS.put(videoUploadUrl!, fileBuffer, { headers: { 'Content-Type': file.mimetype, } })
+  const { status } = await axios.put(videoUploadUrl!, fileBuffer, { headers: { 'Content-Type': file.mimetype, } })
 
   if (status !== 200)
     throw new Error('上传视频失败')
