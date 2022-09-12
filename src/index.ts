@@ -5,7 +5,7 @@ import cors from 'cors'
 import express from 'express'
 import multer from 'multer'
 import { getVideoUrl, removeVideo, uploadVideo } from './huaweicloud'
-import { REGION, UPLOAD_DIR } from './shared'
+import { UPLOAD_DIR } from './shared'
 
 const app = express()
 const upload = multer({ dest: 'upload/' })
