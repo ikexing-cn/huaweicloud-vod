@@ -15,7 +15,7 @@
   "sideEffects": false,
   "scripts": {
     "build": "unbuild",
-    "dev": "esno watch src",
+    "dev": "esno watch src --env dev",
     "lint": "eslint .",
     "prepublishOnly": "nr build",
     "release": "bumpp && npm publish",
@@ -43,6 +43,7 @@
     "eslint": "^8.23.0",
     "esno": "^0.16.3",
     "pnpm": "^7.11.0",
+    "process": "^0.11.10",
     "typescript": "^4.8.3",
     "unbuild": "^0.8.10",
     "vite": "^3.1.0",
