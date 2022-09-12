@@ -9,5 +9,5 @@ lib-cov
 logs
 node_modules
 temp
-secret.json
 .history
+secret_dev.json
